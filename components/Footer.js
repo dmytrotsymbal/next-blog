@@ -1,8 +1,6 @@
 const Footer = () => {
   return (
-    <footer style={{ width: "100%", height: "60px", backgroundColor: "gray" }}>
-      BEBBEBE_Footer
-    </footer>
+    <footer style={{ width: "100%", height: "60px" }}>BEBBEBE_Footer</footer>
   );
 };
 
