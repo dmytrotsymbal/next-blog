@@ -22,8 +22,6 @@ const Home = () => {
           width={490}
           height={480}
           alt="womanImgHomePage"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPk+jrgFAD9AQfIiFJQAAAABJRU5ErkJggg=="
         />
       </div>
     </>

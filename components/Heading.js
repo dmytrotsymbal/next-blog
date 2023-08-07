@@ -1,5 +1,5 @@
 const Heading = ({ tag, text }) => {
-  const Tag = tag || "h1";
+  const Tag = tag || "h2";
   return <Tag style={{ textAlign: "center" }}>{text}</Tag>;
 };
 

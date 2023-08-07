@@ -1,0 +1,15 @@
+.postsPage {
+  min-height: 1000px;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+
+  .postsPage_container {
+    width: 80%;
+    height: 100%;
+
+    .postsPage_paragraph {
+      text-align: center;
+    }
+  }
+}

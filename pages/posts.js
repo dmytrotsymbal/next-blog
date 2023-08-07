@@ -1,5 +1,6 @@
 import Heading from "@/components/Heading";
 import Head from "next/head";
+import styles from "@/styles/Posts.module.scss";
 
 const Posts = () => {
   return (
@@ -7,16 +8,12 @@ const Posts = () => {
       <Head>
         <title>POSTS</title>
       </Head>
-      <div style={{ minHeight: "1000px" }}>
-        <div className="container">
+      <div className={styles.postsPage}>
+        <div className={styles.postsPage_container}>
           <Heading text="Posts" />
-          <p>lorem lorem</p>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-          </ul>
+          <p className={styles.postsPage_paragraph}>
+            lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
         </div>
       </div>
     </>
