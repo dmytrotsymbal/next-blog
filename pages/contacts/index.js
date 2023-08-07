@@ -26,7 +26,7 @@ const Contacts = ({ contacts }) => {
       </Head>
       <Heading text="Contacts list:" />
 
-      <ol>
+      <ol style={{ marginLeft: "calc(50% - 245px)" }}>
         {contacts.map((contact) => (
           <li key={contact.id}>
             <Link href={`contacts/${contact.id}`}>{contact.name}</Link>
