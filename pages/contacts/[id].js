@@ -21,7 +21,6 @@ export const getServerSideProps = async (context) => {
 const Contact = ({ contact }) => {
   return (
     <>
-      <p>Contact</p>
       <ContactInfo contact={contact} />
     </>
   );
