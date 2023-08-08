@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Heading from "./Heading";
 import Link from "next/link";
+import { Container } from "@mui/material";
 
 const ContactInfo = ({ contact }) => {
   const { name, email, phone, address, website } = contact || {};
@@ -17,21 +18,23 @@ const ContactInfo = ({ contact }) => {
         <title>{name}</title>
       </Head>
 
-      <Heading text={name} />
+      <Container>
+        <Heading text={name} />
 
-      <div>
-        <Link href={`mailto:${email}`}>{email}</Link>
-        <Link href={`tel:${phone}`}>{phone}</Link>
-        <Link href={website}>{website}</Link>
-      </div>
+        <div>
+          <Link href={`mailto:${email}`}>{email}</Link>
+          <Link href={`tel:${phone}`}>{phone}</Link>
+          <Link href={website}>{website}</Link>
+        </div>
 
-      <br />
-      <div>
-        <p>{street}</p>
-        <p>{suite}</p>
-        <p>{city}</p>
-        <p>{zipcode}</p>
-      </div>
+        <br />
+        <div>
+          <p>{street}</p>
+          <p>{suite}</p>
+          <p>{city}</p>
+          <p>{zipcode}</p>
+        </div>
+      </Container>
     </>
   );
 };

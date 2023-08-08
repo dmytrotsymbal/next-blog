@@ -1,4 +1,5 @@
 import Heading from "@/components/Heading";
+import { Container } from "@mui/material";
 import Head from "next/head";
 import Link from "next/link";
 // import styles from "@/styles/Posts.module.scss";
@@ -31,30 +32,32 @@ const Posts = ({ posts }) => {
         <title>POSTS</title>
       </Head>
 
-      <Heading text="Posts list:" />
+      <Container>
+        <Heading text="Posts list:" />
 
-      <ul style={{ marginLeft: "calc(50% - 245px)" }}>
-        {posts.slice(0, part).map((post) => (
-          <li key={post.id}>
-            <Link href={`posts/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {posts.slice(0, part).map((post) => (
+            <li key={post.id}>
+              <Link href={`posts/${post.id}`}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <button
-        type="button"
-        style={{
-          backgroundColor: "blue",
-          color: "white",
-          borderRadius: "5px",
-          width: "100px",
-          marginTop: "20px",
-          marginLeft: "calc(50% - 50px)",
-        }}
-        onClick={loadMore}
-      >
-        Load more
-      </button>
+        <button
+          type="button"
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            borderRadius: "5px",
+            width: "100px",
+            marginTop: "20px",
+            marginLeft: "calc(50% - 50px)",
+          }}
+          onClick={loadMore}
+        >
+          Load more
+        </button>
+      </Container>
     </>
   );
 };
