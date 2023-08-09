@@ -4,6 +4,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { Card, CardContent, Container, Grid } from "@mui/material";
 import { useState } from "react";
+import Button from "@/components/Button";
 
 export const getStaticProps = async () => {
   const res = await fetch(`${process.env.API_HOST}/gallery/`);
@@ -55,20 +56,13 @@ const Home = ({ gallery }) => {
             </Grid>
           </div>
 
-          <button
-            type="button"
-            style={{
-              backgroundColor: "blue",
-              color: "white",
-              borderRadius: "5px",
-              width: "100px",
-              marginTop: "20px",
-              marginLeft: "calc(50% - 50px)",
-            }}
-            onClick={loadMore}
-          >
-            Load more
-          </button>
+          <div className={styles.loadMoreDiv}>
+            <Button
+              text={"Load more"}
+              doing={loadMore}
+              style={{ backgroundColor: "black", color: "white" }}
+            />
+          </div>
         </Container>
       </div>
     </>

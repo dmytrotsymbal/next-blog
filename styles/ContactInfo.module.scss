@@ -1,0 +1,22 @@
+.ContactInfoDiv {
+  min-height: 600px;
+
+  .card {
+    width: 450px;
+    margin-left: calc(50% - 225px);
+    border-radius: 10px;
+    margin-top: 50px;
+
+    .divWithLinks {
+      margin-top: 30px;
+
+      .ul {
+        margin-left: 16px;
+
+        li:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

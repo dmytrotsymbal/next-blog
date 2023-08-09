@@ -2,8 +2,9 @@ import Heading from "@/components/Heading";
 import { Container } from "@mui/material";
 import Head from "next/head";
 import Link from "next/link";
-// import styles from "@/styles/Posts.module.scss";
+import styles from "@/styles/Posts.module.scss";
 import { useState } from "react";
+import Button from "@/components/Button";
 
 export const getStaticProps = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -43,20 +44,9 @@ const Posts = ({ posts }) => {
           ))}
         </ul>
 
-        <button
-          type="button"
-          style={{
-            backgroundColor: "blue",
-            color: "white",
-            borderRadius: "5px",
-            width: "100px",
-            marginTop: "20px",
-            marginLeft: "calc(50% - 50px)",
-          }}
-          onClick={loadMore}
-        >
-          Load more
-        </button>
+        <div className={styles.loadMoreDiv}>
+          <Button text={"Load more"} doing={loadMore} />
+        </div>
       </Container>
     </>
   );

@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Heading from "./Heading";
 import Link from "next/link";
-import { Container } from "@mui/material";
+import { Card, CardContent, Container } from "@mui/material";
+import styles from "../styles/ContactInfo.module.scss";
+import Heading from "./Heading";
 
 const ContactInfo = ({ contact }) => {
   const { name, email, phone, address, website } = contact || {};
@@ -18,23 +19,38 @@ const ContactInfo = ({ contact }) => {
         <title>{name}</title>
       </Head>
 
-      <Container>
-        <Heading text={name} />
+      <div className={styles.ContactInfoDiv}>
+        <Container>
+          <Card className={styles.card}>
+            <CardContent>
+              <Heading text={name} />
+              <div>
+                <p>
+                  <strong>Adress:</strong> {city}, {street}, {suite}, {zipcode}{" "}
+                </p>
+              </div>
 
-        <div>
-          <Link href={`mailto:${email}`}>{email}</Link>
-          <Link href={`tel:${phone}`}>{phone}</Link>
-          <Link href={website}>{website}</Link>
-        </div>
+              <div className={styles.divWithLinks}>
+                <strong>Contact info:</strong>
 
-        <br />
-        <div>
-          <p>{street}</p>
-          <p>{suite}</p>
-          <p>{city}</p>
-          <p>{zipcode}</p>
-        </div>
-      </Container>
+                <ul className={styles.ul}>
+                  <li>
+                    <Link href={`mailto:${email}`}>{email}</Link>
+                  </li>
+
+                  <li>
+                    <Link href={`tel:${phone}`}>{phone}</Link>
+                  </li>
+
+                  <li>
+                    <Link href={website}>{website}</Link>
+                  </li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </Container>
+      </div>
     </>
   );
 };
