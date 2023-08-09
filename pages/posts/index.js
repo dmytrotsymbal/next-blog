@@ -36,7 +36,7 @@ const Posts = ({ posts }) => {
       <Container>
         <Heading text="Posts list:" />
 
-        <ul>
+        <ul style={{ marginTop: "30px" }}>
           {posts.slice(0, part).map((post) => (
             <li key={post.id}>
               <Link href={`posts/${post.id}`}>{post.title}</Link>

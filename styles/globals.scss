@@ -27,9 +27,12 @@ h2 {
   text-align: center;
 }
 
-ol,
-ul {
+ol {
   list-style-type: style;
+}
+
+ul {
+  list-style: inside;
 }
 
 a {

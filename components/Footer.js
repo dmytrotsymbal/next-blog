@@ -1,6 +1,14 @@
+import { Container } from "@mui/material";
+import styles from "../styles/Footer.module.scss";
+import Heading from "./Heading";
+
 const Footer = () => {
   return (
-    <footer style={{ width: "100%", height: "60px" }}>BEBBEBE_Footer</footer>
+    <footer className={styles.footer}>
+      <Container>
+        <Heading tag="h4" text={"Test NextJS project"} />
+      </Container>
+    </footer>
   );
 };
 
