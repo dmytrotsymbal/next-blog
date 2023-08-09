@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch(`${process.env.API_HOST}/gallery/`);
+    const res = await fetch(`${process.env.API_HOST}/gallery`);
     const data = await res.json();
 
     if (!data) {
