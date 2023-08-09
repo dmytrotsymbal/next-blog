@@ -6,22 +6,19 @@ import { Card, CardContent, Container, Grid } from "@mui/material";
 import { useState } from "react";
 import Button from "@/components/Button";
 export const getStaticProps = async () => {
-  if (!process.env.API_HOST) {
-    console.error("API_HOST is not defined");
-    return {
-      props: {
-        gallery: null,
-      },
-    };
-  }
-
   try {
     const res = await fetch(`${process.env.API_HOST}/gallery`);
     const data = await res.json();
 
+    if (!data) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
       props: {
-        gallery: data || null,
+        gallery: data,
       },
     };
   } catch (error) {
