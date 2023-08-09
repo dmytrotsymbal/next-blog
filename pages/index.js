@@ -7,20 +7,26 @@ import { useState } from "react";
 import Button from "@/components/Button";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.API_HOST}/gallery/`);
-  const data = await res.json();
+  try {
+    const res = await fetch(`${process.env.API_HOST}/gallery/`);
+    const data = await res.json();
 
-  if (!data) {
+    if (!data) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
-      notFound: true,
+      props: {
+        gallery: data,
+      },
+    };
+  } catch {
+    return {
+      gallery: null,
     };
   }
-
-  return {
-    props: {
-      gallery: data,
-    },
-  };
 };
 const Home = ({ gallery }) => {
   const [part, setPart] = useState(12);
