@@ -5,7 +5,6 @@ import Head from "next/head";
 import { Card, CardContent, Container, Grid } from "@mui/material";
 import { useState } from "react";
 import Button from "@/components/Button";
-
 export const getStaticProps = async () => {
   try {
     const res = await fetch(`${process.env.API_HOST}/gallery`);
@@ -22,12 +21,17 @@ export const getStaticProps = async () => {
         gallery: data,
       },
     };
-  } catch {
+  } catch (error) {
+    console.error("Error fetching gallery data:", error);
+
     return {
-      gallery: null,
+      props: {
+        gallery: null,
+      },
     };
   }
 };
+
 const Home = ({ gallery }) => {
   const [part, setPart] = useState(12);
 
